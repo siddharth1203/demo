@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The XMLHttpRequest Object</h1>
+
+<p id="demo"></p>
+ 
+<script>
+    const xhr=new XMLHttpRequest();
+    
+    xhr.onload=function(){
+        const s=document.getElementById("demo");
+        s.innerHTML=this.responseText;
+    }
+    xhr.open("POST","./dom.php");
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.send("name=domenic&message=how's it going");
+</script>
+
+</body>
+</html>
